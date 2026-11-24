@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia de Redstone para Minecraft</title>
+<meta name="description" content="Aprenda redstone no Minecraft com demonstrações interativas: fios, componentes, portas lógicas e relógios.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23b3171b'/><rect x='4' y='4' width='8' height='8' fill='%23ff4a3d'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Principal">
+<a class="brand" href="#topo">Guia de Redstone</a>
+<div class="links">
+<a href="#componentes">Componentes</a><a href="#portas">Portas lógicas</a><a href="#relogio">Relógio</a><a href="#dicas">Dicas</a>
+</div>
+<button class="btn sm" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+</nav>
+</header>
+<main id="topo">
+<section class="hero">
+<h1>Redstone: do primeiro fio ao circuito completo</h1>
+<p class="lead">Aprenda como a energia viaja pelo mundo do Minecraft. Ligue a alavanca e veja a força do sinal diminuir a cada bloco.</p>
+<ul class="facts">
+<li><b>15</b> força máxima do sinal</li>
+<li><b>0,1 s</b> duração de um tick de redstone</li>
+<li><b>12</b> blocos que um pistão empurra</li>
+</ul>
+<div class="box">
+<div class="row">
+<button class="btn" id="lever" type="button" aria-pressed="false">Alavanca: desligada</button>
+<label class="chk"><input type="checkbox" id="rep"> Repetidor no bloco 16</label>
+</div>
+<div class="wire" id="wire" role="img" aria-label="Fio de redstone com 24 blocos e uma lâmpada no final"></div>
+<p class="status" id="status" aria-live="polite"></p>
+<p class="note">Cada número é a força do sinal naquele bloco. O fio perde 1 por bloco e morre depois de 15. O repetidor devolve a força para 15.</p>
+</div>
+</section>
+
+<section id="componentes">
+<h2>Componentes essenciais</h2>
+<p class="lead">Dez peças que aparecem em quase todo projeto. Filtre por função.</p>
+<div class="tabs" id="filters" role="group" aria-label="Filtrar componentes"></div>
+<div class="grid" id="comps"></div>
+</section>
+
+<section id="portas">
+<h2>Laboratório de portas lógicas</h2>
+<p class="lead">Portas lógicas são a base de portas secretas, cofres e máquinas. Escolha uma porta, mude as entradas e acompanhe a saída.</p>
+<div class="box">
+<div class="tabs" id="tabs" role="group" aria-label="Escolher porta"></div>
+<div class="gate">
+<div>
+<div class="row"><button class="btn" id="a" type="button" aria-pressed="false">Entrada A: 0</button><button class="btn" id="b" type="button" aria-pressed="false">Entrada B: 0</button></div>
+<div class="out"><div class="bulb" id="bulb"></div><span class="status" id="outTxt" aria-live="polite"></span></div>
+<p id="gdesc"></p>
+</div>
+<table id="tt"></table>
+</div>
+</div>
+</section>
+
+<section id="relogio">
+<h2>Relógio de redstone</h2>
+<p class="lead">Um relógio gera pulsos repetidos, usado em fazendas e luzes piscantes. Mude o atraso dos repetidores e veja o período mudar.</p>
+<div class="box">
+<div class="row">
+<button class="btn" id="play" type="button" aria-pressed="false">Iniciar</button>
+<label class="chk">Atraso: <input type="range" id="delay" min="1" max="4" value="2"> <output id="dOut">2 ticks</output></label>
+</div>
+<div class="wire" id="clock" role="img" aria-label="Anel de 8 blocos com um pulso em movimento"></div>
+<p class="status" id="period" aria-live="polite"></p>
+</div>
+</section>
+
+<section id="dicas">
+<h2>Dicas para não travar</h2>
+<dl>
+<dt>Meça o tempo em ticks</dt><dd>Um tick de redstone dura 0,1 segundo. Repetidores atrasam o sinal de 1 a 4 ticks e tochas atrasam 1 tick.</dd>
+<dt>Cuidado com vazamentos</dt><dd>Poeira de redstone não fica sobre vidro, mas sobe escadas de blocos sólidos. Um bloco sólido entre dois fios pode ligar um ao outro por acidente.</dd>
+<dt>Pistões têm limite</dt><dd>Um pistão empurra no máximo 12 blocos. Obsidiana e bedrock não se movem.</dd>
+<dt>Conheça sua edição</dt><dd>No Java, pistões e outros componentes podem ser ativados pelo bloco acima (quase-conectividade). No Bedrock isso não acontece, então copie projetos só da sua edição.</dd>
+<dt>Construa pequeno primeiro</dt><dd>Monte o circuito em um mundo plano, teste cada parte separada e só depois esconda tudo atrás de paredes.</dd>
+</dl>
+</section>
+</main>
+<footer>Guia não oficial. Minecraft é marca da Mojang Studios. <a href="#topo">Voltar ao topo</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
